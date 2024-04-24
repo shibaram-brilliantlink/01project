@@ -12,6 +12,11 @@ function App() {
     <h2>Good Afternoon</h2>
     <h2>Good Evening</h2>
     <h2>Good Night</h2>
+<hr />
+    <h2>Good Morning </h2>
+    <h2>Good Afternoon</h2>
+    <h2>Good Evening</h2>
+    <h2>Good Night</h2>
      </div>
     </>
   )
