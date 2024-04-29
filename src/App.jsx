@@ -1,33 +1,30 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
-import './App.css'
+import "./App.css";
+import Homepage from './pages/Homepage'
+import Workpage from "./pages/Workpage";
+import Aboutpage from "./pages/Aboutpage";
+import Contactpage from "./pages/Contactpage";
+
+
 
 function App() {
-
   return (
-    <>
-     <div>
-      1
-    <h1>Heading 1</h1>
-    <h2>Good Morning </h2>
-    <h2>Good Afternoon</h2>
-    <h2>Good Evening</h2>
-    <h2>Good Night</h2>
-<hr />
-2
-    <h2>Good Morning </h2>
-    <h2>Good Afternoon</h2>
-    <h2>Good Evening</h2>
-    <h2>Good Night</h2>
-    <hr />
-    3
-    <h2>Good Morning </h2>
-    <h2>Good Afternoon</h2>
-    <h2>Good Evening</h2>
-    <h2>Good Night</h2>
-     </div>
-    </>
-  )
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />}/>
+          <Route path="/Work" element={<Workpage />} />
+          <Route path="/about" element={<Aboutpage />} />
+          <Route path="/contact" element={<Contactpage />} />
+        </Routes>
+      </Router>
+  
+    </div>
+  );
 }
 
-export default App
+export default App;
