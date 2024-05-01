@@ -32,7 +32,7 @@ export default function Navbar() {
           <Hambuger onClick={() => setExtendedNav(current => !current)}  />
         </Navright>
       </Navmain>
-      {extendedNav ? 
+      {extendedNav &&
       (<Navmenuextended>
         <li>
           <Navlink to="/work">Work</Navlink>
@@ -44,18 +44,17 @@ export default function Navbar() {
           <Navlink to="/contact">Contact</Navlink>
         </li>
       </Navmenuextended>)
-      : ""}
-      
+}
     </StyledNavbar>
   );
 }
 const StyledNavbar = styled.nav`
+  margin: 4% 5% 0 5%;
   display: flex;
   flex-direction: column;
   text-align: center;
   font-size: 0.95rem;
   position: relative;
-
   li {
     list-style: none;
   }

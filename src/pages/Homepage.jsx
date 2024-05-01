@@ -7,7 +7,6 @@ import Footer from "../components/Footer";
 function Homepage() {
   return (
     <>
-      <div>Welcome to Homepage</div>
       <Topsection />
       <Midsection />
       <Bottomsection />
