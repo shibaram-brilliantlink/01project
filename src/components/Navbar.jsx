@@ -13,7 +13,7 @@ export default function Navbar() {
           <div>
             <Navlink to="/">SHIKASHI</Navlink>
           </div>
-          <Navdownload>
+          <Navdownload onClick={print}>
             Download CV <TfiDownload />
           </Navdownload>
         </Navleft>
@@ -58,6 +58,9 @@ const StyledNavbar = styled.nav`
   li {
     list-style: none;
   }
+  @media (min-width: 1440px) {
+    font-size: clamp(1.10rem,1.05vw ,1.875rem)
+  }
 `;
 const Navmain = styled.div`
   display: flex;
@@ -83,7 +86,7 @@ const Navmenu = styled.ul`
 display: none;
   @media (min-width: 1025px) {
     display: flex;
-    gap: 1.5em;
+    gap: 2.5em;
 
 
   }

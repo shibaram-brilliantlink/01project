@@ -16,5 +16,4 @@ const StyledFooter = styled.div`
   text-align: right;
   font-size: 1.5rem;
   padding: 2em 1em 2em 0;
-
 `

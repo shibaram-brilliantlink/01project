@@ -71,6 +71,12 @@ display: flex;
 width: 50%;
 margin: 2.5% auto;
 align-items: center;
+@media (min-width: 425px) and (max-width: 1024px) {
+width: 80%;
+justify-content: flex-start;
+margin: 2.5% 0.5% 2.5% auto;
+
+}
 `;
 const Profileimg = styled.div`
   width: 50%;
@@ -81,6 +87,6 @@ const Profileimg = styled.div`
 const Profileintro = styled.div`
  width: 50%;
  margin-left: 1%;
- font-size: 1.4rem;
+ font-size: clamp(1rem, 1.5vw, 1.75rem);
  text-align: justify;
-`;
+`
