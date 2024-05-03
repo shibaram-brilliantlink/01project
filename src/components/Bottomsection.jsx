@@ -54,14 +54,12 @@ function Bottomsection() {
         <Me>ME</Me>
         <Contacts>
           <ul>
-            <hr />
             <h3>SOCIALS</h3>
             <li>Behance</li>
             <li>Instagram</li>
             <li>Facebook</li>
           </ul>
           <ul>
-            <hr />
             <h3>CONTACTS</h3>
             <li>
               <a href="tel: +9140255402454">+91 402554 02454</a>
@@ -85,16 +83,25 @@ const StyledBottomSection = styled.div`
   align-items: flex-end;
   border-top: 2px solid black;
   margin-top: 6em;
-  /* * {
-    border: 1px solid black;
-  } */
+  margin-bottom: 2.5em;
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 const Top = styled.div`
   width: 75%;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 const Heading = styled.div`
   margin-top: 1em;
-  font-size: 5.5vw;
+  margin-bottom: 0.5em;
+  font-size: clamp(
+    1.875rem,
+    calc(1.875rem + ((1vw - 0.203125rem) * 4.3887)),
+    6.25rem
+  );
   font-weight: 800;
   span {
     -webkit-text-stroke-width: 1.5px;
@@ -104,7 +111,15 @@ const Heading = styled.div`
 `;
 const Content = styled.div`
   width: 80%;
-  font-size: 1.3rem;
+  font-size: clamp(1rem, calc(1rem + ((1vw - 0.203125rem) * 0.4514)), 1.45rem);
+  line-height: 1.45;
+  font-weight: 300;
+  h3 {
+    font-size: 1.1em;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const Para = styled.div`
   display: flex;
@@ -114,12 +129,21 @@ const Para = styled.div`
     text-align: justify;
     width: 48%;
   }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    p {
+      width: 100%;
+    }
+  }
 `;
 const Bottom = styled.div`
   width: 75%;
   display: flex;
   flex-wrap: wrap;
-
+  margin-top: 0.75em;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 const List = styled.div`
   width: 100%;
@@ -134,7 +158,10 @@ const List = styled.div`
 const Contact = styled.div`
   font-size: 14vw;
   font-weight: 700;
-  width: 100%;
+  width: 80%;
+  @media (max-width: 500px) {
+    width: fit-content;
+  }
 `;
 const Me = styled.div`
   font-size: 14vw;
@@ -144,19 +171,53 @@ const Me = styled.div`
   color: transparent;
   width: 27%;
   line-height: 1;
-
+  @media (max-width: 500px) {
+    line-height: normal;
+    margin-left: 0.2em;
+  }
 `;
 const Contacts = styled.div`
   width: 70%;
   display: flex;
   justify-content: flex-start;
+  font-weight: 300;
   ul {
     width: 25%;
     margin-left: 2em;
-    font-size: 1.45rem;
+    font-size: clamp(16px, calc(1rem + ((1vw - 3.25px) * 0.4514)), 23.2px);
     list-style: none;
-    padding-top: 1.3em;
+    padding-top: 1em;
+  }
+  h3 {
+    border-top: 0.5px solid black;
+    padding-top: 0.3em;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    ul {
+      width: 50%;
+      margin-left: 0.9em;
+      padding-top: 0.5em;
+    }
+    h3 {
+      font-size: 1.1em;
+      font-weight: 450;
+    }
+  }
+  @media (max-width: 425px) {
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid black;
+    h3 {
+      border: none;
+      font-size: 1em;
+      padding-top: 0;
+    }
+    ul {
+      margin-left: 0;
+    }
   }
 `;
-
-

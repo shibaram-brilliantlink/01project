@@ -25,14 +25,13 @@ const StyledCard = styled.div`
   width: 50%;
   padding: 2.5vw;
   border: 1px solid black;
-  @media (max-width: 450px) {
+  @media (max-width: 560px) {
     width: 100%;
   }
 `;
 const Cardheading = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   font-size: 1.25rem;
   h1 {
     font-size: 2em;
@@ -60,8 +59,19 @@ const Cardheading = styled.div`
   @media (min-width: 768px) and (max-width: 1024px) {
     font-size: 1.05rem;
   }
-  @media (min-width: 425px) and (max-width: 767px) {
+  @media (max-width: 767px) {
     font-size: 1rem;
+    flex-direction: column;
+    button {
+      font-size: 1em;
+      padding: 0.35em;
+      margin-bottom: 0.2em;
+    }
+    div:nth-child(2) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1em;
+    }
   }
 `;
 const Cardimg = styled.div`
@@ -70,4 +80,10 @@ const Cardimg = styled.div`
     width: 100%;
   }
   margin-top: 1em;
+  @media (max-width: 560px) {
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
 `;

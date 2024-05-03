@@ -15,7 +15,7 @@ function Midsection() {
           <marquee
             width="100%"
             direction="right"
-            height="120px"
+            height="100px"
             scrollamount="10"
           >
             <span>Work</span>
@@ -42,7 +42,7 @@ function Midsection() {
           imgsrc={Titimes}
         />
         <Card
-          title="INGENUE"
+          title="EMPIRE"
           text="Concepts for an cloubhouse"
           imgsrc={Empire}
         />
@@ -65,6 +65,12 @@ const StyledMidsection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+  @media (max-width: 500px) {
+    align-items: flex-start;
+  }
 `;
 const Top = styled.div`
   width: 100%;
@@ -90,19 +96,28 @@ const Banner = styled.div`
 `;
 const Bottom = styled.div`
   width: 75%;
-  /* border: 1px solid black; */
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
-const Stagetitle = styled.div``;
+const Stagetitle = styled.div`
+  font-size: clamp(
+    1.875rem,
+    calc(1.875rem + ((1vw - 0.203125rem) * 4.3887)),
+    6.25rem
+  );
+`;
 const Titlefill = styled.div`
-  font-size: 6vw;
   font-weight: bold;
   margin-top: 0.45em;
 `;
 const Titlehollow = styled.div`
-  font-size: 6vw;
   font-weight: bold;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   color: transparent;
   line-height: 1.25;
+  @media (min-width: 300px) {
+    -webkit-text-stroke-width: 1.5px;
+  }
 `;

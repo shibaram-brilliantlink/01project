@@ -32,8 +32,7 @@ export default Topsection;
 
 const StyledTopsection = styled.div`
   padding: 0 5%;
-  border-bottom: 2px solid black; 
-  
+  border-bottom: 2px solid black;
 `;
 const Designer = styled.div`
   display: flex;
@@ -61,32 +60,51 @@ const Designertext = styled.div`
 const Portfolio = styled.div`
   color: transparent;
   font-size: 16vw;
-  line-height: 1.10;
+  line-height: 1.1;
   font-weight: 700;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 `;
 const Topprofile = styled.div`
-display: flex;
-width: 50%;
-margin: 2.5% auto;
-align-items: center;
-@media (min-width: 425px) and (max-width: 1024px) {
-width: 80%;
-justify-content: flex-start;
-margin: 2.5% 0.5% 2.5% auto;
-
-}
+  display: flex;
+  width: 50%;
+  margin: 7% auto;
+  align-items: center;
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 75%;
+    justify-content: flex-start;
+    margin: 5% 0.5% 5% auto;
+  }
+  @media (max-width: 768px) {
+    padding: 0;
+    margin: 5% auto;
+    width: 75%;
+  }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    margin: 10% auto;
+    width: 100%;
+  }
 `;
 const Profileimg = styled.div`
   width: 50%;
   img {
     width: 100%;
   }
+  @media (max-width: 1025px) {
+    width: 40%;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 const Profileintro = styled.div`
- width: 50%;
- margin-left: 1%;
- font-size: clamp(1rem, 1.5vw, 1.75rem);
- text-align: justify;
-`
+  width: 50%;
+  margin-left: 1%;
+  font-size: clamp(1rem, 1.5vw, 1.75rem);
+  text-align: justify;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+`;
