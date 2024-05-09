@@ -1,5 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  FaGithub,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 
 function Bottomsection() {
   return (
@@ -55,9 +62,26 @@ function Bottomsection() {
         <Contacts>
           <ul>
             <h3>SOCIALS</h3>
-            <li>Behance</li>
-            <li>Instagram</li>
-            <li>Facebook</li>
+            <li>
+              <a href="https://github.com/login" target="_blank">
+                <FaGithub />
+              </a>
+              <a href="https://www.facebook.com/login/" target="_blank">
+                <FaFacebook />
+              </a>
+              <a
+                href="https://www.instagram.com/accounts/login/?next=%2Flogin%2F&source=desktop_nav"
+                target="_blank"
+              >
+                <FaInstagram />
+              </a>
+              <a href="https://www.linkedin.com/login" target="_blank">
+                <FaLinkedin />
+              </a>
+              <a href="https://twitter.com/i/flow/login" target="_blank">
+                <FaTwitter />
+              </a>
+            </li>
           </ul>
           <ul>
             <h3>CONTACTS</h3>
@@ -187,6 +211,12 @@ const Contacts = styled.div`
     font-size: clamp(16px, calc(1rem + ((1vw - 3.25px) * 0.4514)), 23.2px);
     list-style: none;
     padding-top: 1em;
+  }
+  ul:nth-child(1) li {
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5em;
   }
   h3 {
     border-top: 0.5px solid black;
