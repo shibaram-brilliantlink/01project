@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 function Contactpage() {
@@ -6,11 +6,29 @@ function Contactpage() {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
   };
   // console.log(errors);
+  const validatePassword = (value) => {
+    if (value.length < 6) {
+      return "Password should be atleast 6 character";
+    } else if (
+      !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)(?=.*[!@#$*])/.test(value)
+    ) {
+      return "Password should contain atlest one uppercase, lowercase, digit and Special character";
+    }
+    return true;
+  };
+  const validateCpassword = (value) => {
+    if (watch("password") !== value) {
+      //here "password" is password -value in submit data object
+      return "Password did not match";
+    }
+    return 1;
+  };
 
   return (
     <StyledContactpage>
@@ -104,7 +122,19 @@ function Contactpage() {
                 Email Id<Required>*</Required>
               </label>
             </div>
-            <input type="email" id="email" placeholder="Email id here" />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email id here"
+              {...register("email", {
+                required: "Email id is required.",
+                pattern: {
+                  value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/,
+                  message: "Email id is invalid",
+                },
+              })}
+            />
+            {errors.email && <Errormsg>{errors.email.message}</Errormsg>}
           </Input>
           <Input>
             <div>
@@ -112,15 +142,37 @@ function Contactpage() {
                 Phone No<Required>*</Required>
               </label>
             </div>
-            <input type="tel" id="phoneno" placeholder="Phone no here" />
+            <input
+              type="tel"
+              id="phoneno"
+              placeholder="Phone no here"
+              {...register("phoneno", {
+                required: "Phone no is required",
+                pattern: {
+                  value: /^\+(?:[0-9] ?){6,14}[0-9]$/,
+                  message: "Phone no is invalid. i.e. +09898955564",
+                },
+              })}
+            />
+            {errors.phoneno && <Errormsg>{errors.phoneno.message}</Errormsg>}
           </Input>
+          {/* Add a Custom Validation Method for - complex validation*/}
           <Input>
             <div>
               <label htmlFor="password">
                 Password<Required>*</Required>
               </label>
             </div>
-            <input type="password" id="password" placeholder="Password here" />
+            <input
+              type="text"
+              id="password"
+              placeholder="Password here"
+              {...register("password", {
+                required: "Password is required",
+                validate: validatePassword,
+              })}
+            />
+            {errors.password && <Errormsg>{errors.password.message}</Errormsg>}
           </Input>
           <Input>
             <div>
@@ -129,24 +181,17 @@ function Contactpage() {
               </label>
             </div>
             <input
-              type="password"
+              type="text"
               id="cpassword"
               placeholder="Confirm Password here"
+              {...register("cpassword", {
+                required: "Confirm password is required",
+                validate: validateCpassword,
+              })}
             />
-          </Input>
-          <Input>
-            <div>
-              <label htmlFor="subject">
-                Subject<Required>*</Required>
-              </label>
-            </div>
-            <select id="subject">
-              <option value="hiring">For Hiring</option>
-              <option value="suggestions">Suggestions</option>
-              <option value="query">Query regarding specific services</option>
-              <option value="complaint">Complaints</option>
-              <option value="others">Others</option>
-            </select>
+            {errors.cpassword && (
+              <Errormsg>{errors.cpassword.message}</Errormsg>
+            )}
           </Input>
           <Input>
             <div>
@@ -189,9 +234,6 @@ const Content = styled.div`
     font-weight: 400;
     font-size: 1.4rem;
   }
-  p {
-    font-weight: 300;
-  }
   a {
     color: darkblue;
     text-decoration: none;
@@ -214,7 +256,7 @@ const Contactform = styled.div`
   }
   p {
     margin: 0.5em 0 1em 0;
-    font-size: 1.2em;
+    font-size: 1.15em;
   }
 `;
 const Required = styled.span`
@@ -223,8 +265,9 @@ const Required = styled.span`
 const Input = styled.div`
   width: 90%;
   margin-top: 0.8em;
-  font-size: inherit;
+  font-size: 1.1rem;
   input {
+    font-size: 1rem;
     width: 100%;
     padding: 10px;
     border: 1px solid black;
@@ -241,11 +284,16 @@ const Input = styled.div`
 `;
 const Textarea = styled.div`
   textarea {
-    min-height: 150px;
-    max-height: 300px;
     width: 100%;
     max-width: 600px;
     outline: none;
+    margin-top: 0.6em;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-size: 1rem;
   }
 `;
 const Button = styled.div`
