@@ -140,7 +140,20 @@ const Navdownload = styled.div`
 `;
 
 const Navmenuextended = styled.ul`
+  background-color: #000000a6;
+  width: 25%;
+  height: 100vh;
   font-size: 0.9rem;
+  a {
+    color: #aeaeae;
+  }
+  a:hover {
+    color: white;
+  }
+  position: absolute;
+  top: 0;
+  right: -5.58%;
+  bottom: 0;
   @media (min-width: 1025px) {
     display: none;
   }

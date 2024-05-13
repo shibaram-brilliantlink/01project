@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
+import { FaLink } from "react-icons/fa";
 function Contactpage() {
   const {
     register,
@@ -29,11 +30,15 @@ function Contactpage() {
     }
     return 1;
   };
-
   return (
     <StyledContactpage>
       <Content>
-        <h1>Let's Connect</h1>
+        <h1>
+          Let's <div>Connect&nbsp;</div>
+          <span>
+            <FaLink />
+          </span>
+        </h1>
         <h4>
           Get in touch to start a conversation about your project. You can
           expect a same-day response.
@@ -89,9 +94,7 @@ function Contactpage() {
               <Errormsg>Min 3 characters should be there.</Errormsg>
             )}
             {errors.fname && errors.fname.type === "pattern" && (
-              <Errormsg>
-                First letter - Capital, Numbers not allowed. i.e. Akshay, Meet.
-              </Errormsg>
+              <Errormsg>First letter - Capital, Numbers not allowed.</Errormsg>
             )}
           </Input>
           <Input>
@@ -193,7 +196,7 @@ function Contactpage() {
               <Errormsg>{errors.cpassword.message}</Errormsg>
             )}
           </Input>
-          <Input>
+          <StyledTextarea>
             <div>
               <label htmlFor="message">
                 Message<Required>*</Required>
@@ -201,11 +204,16 @@ function Contactpage() {
             </div>
             <Textarea>
               <textarea
-                id="message"
-                placeholder="Drop your message here..."
+                placeholder="Write your message here.."
+                name="text"
+                id="text"
+                onInput={(e) =>
+                  (e.target.parentNode.dataset.replicatedValue = e.target.value)
+                }
               ></textarea>
             </Textarea>
-          </Input>
+            {/* <TextAreaInput placeholder="Write your message" /> */}
+          </StyledTextarea>
           <Button>
             <input type="submit" value="Submit" />
           </Button>
@@ -219,23 +227,44 @@ export default Contactpage;
 const StyledContactpage = styled.div`
   display: flex;
   gap: 3em;
-  max-width: 1225px;
+  /* max-width: 1225px; */
   justify-content: center;
-  margin: 0.5em auto;
-  padding-top: 2em;
+  margin: 4em auto;
+  padding: 0 5%;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+  }
 `;
 const Content = styled.div`
   flex: 1;
   h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 1.294rem + 3.765vw, 6rem);
+    line-height: 1.25;
+  }
+  h1 > div {
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: black;
+    color: transparent;
+    display: inline-block;
+  }
+  h1 > span {
+    font-size: clamp(
+      1.5rem,
+      calc(1.5rem + ((1vw - 0.203125rem) * 4.3887)),
+      5rem
+    );
   }
   h4 {
     padding: 1em 0;
-    font-weight: 400;
-    font-size: 1.4rem;
+    font-weight: 350;
+    font-size: clamp(
+      1.25rem,
+      calc(1.25rem + ((1vw - 0.203125rem) * 0.4514)),
+      2rem
+    );
   }
   a {
-    color: darkblue;
+    color: #535353;
     text-decoration: none;
   }
   a:hover {
@@ -243,27 +272,54 @@ const Content = styled.div`
   }
   p {
     line-height: 1.8;
-    font-size: 1.2em;
+    font-size: clamp(
+      1rem,
+      calc(1rem + ((1vw - 0.203125rem) * 0.4514)),
+      1.45rem
+    );
     font-weight: 300;
-    margin-top: 1em;
+    /* margin-top: 0.5em; */
+    text-align: justify;
   }
 `;
 const Contactform = styled.div`
   flex: 1;
   font-size: 1.15rem;
+  margin-top: 1.25em;
+  margin-bottom: 2em;
   h2 {
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 0.941rem + 2.447vw, 4rem);
   }
   p {
     margin: 0.5em 0 1em 0;
-    font-size: 1.15em;
+    font-size: clamp(
+      1rem,
+      calc(1rem + ((1vw - 0.203125rem) * 0.4514)),
+      1.45rem
+    );
+    font-weight: 320;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  label {
+    font-size: clamp(1rem, calc(1rem + ((1vw - 0.203125rem) * 0.4514)), 1.4rem);
+    font-weight: 350;
+    letter-spacing: 0.2px;
+  }
+  @media (max-width: 600px) {
+    form {
+      flex-direction: column;
+    }
   }
 `;
 const Required = styled.span`
   color: red;
 `;
 const Input = styled.div`
-  width: 90%;
+  width: 48%;
   margin-top: 0.8em;
   font-size: 1.1rem;
   input {
@@ -276,45 +332,86 @@ const Input = styled.div`
     outline: none;
     margin-top: 4px;
     margin-left: 1px;
+    font-weight: 300;
+    letter-spacing: 0.1px;
   }
   :focus {
     border: 0.5px solid blue;
-    box-shadow: 0 0 3px 1px cyan;
   }
-`;
-const Textarea = styled.div`
-  textarea {
+  label {
+    font-size: clamp(1rem, calc(1rem + ((1vw - 0.203125rem) * 0.4514)), 1.4rem);
+    font-weight: 350;
+    letter-spacing: 0.2px;
+  }
+  @media (max-width: 768px) {
+    label {
+      font-size: 1.1rem;
+    }
+  }
+  @media (max-width: 600px) {
     width: 100%;
-    max-width: 600px;
-    outline: none;
-    margin-top: 0.6em;
-    padding: 10px;
-    border: 1px solid black;
-    background-color: transparent;
-    border-radius: 4px;
-    font-family: sans-serif;
-    font-size: 1rem;
+    margin-top: 4px;
   }
 `;
 const Button = styled.div`
-  width: 100%;
-  margin-top: 0.8em;
+  width: 95%;
+  margin: 1.25em auto;
+  text-align: center;
+
   input[type="submit"] {
-    color: white;
+    color: #e9e8da;
     font-size: 1.2rem;
     padding: 0.4em;
-    border: 1px solid green;
-    background-color: #04c1048d;
-    border-radius: 3px;
+    border: 1px solid black;
+    background-color: #000;
+    border-radius: 4px;
   }
   input[type="submit"]:hover {
-    background-color: #02aa02a1;
-    border: 0.5px solid blue;
-    box-shadow: 0 0 3px 1px cyan;
+    background-color: transparent;
+    color: black;
   }
 `;
 const Errormsg = styled.p`
   color: red;
-  font-size: 0.8em !important;
-  letter-spacing: 0.5px;
+  font-size: 16px !important;
+  letter-spacing: 0.75px;
+  text-indent: 0.25em;
+  @media (max-width: 1025px) {
+    font-size: 1rem !important;
+  }
+`;
+const StyledTextarea = styled.div`
+  width: 100%;
+  margin-top: 0.5em;
+`;
+const Textarea = styled.div`
+  display: grid;
+  margin-top: 0.4em;
+  &:after {
+    /* Note the weird space! Needed to preventy jumpy behavior */
+    content: attr(data-replicated-value) " ";
+    /* This is how textarea text behaves */
+    white-space: pre-wrap;
+    /* Hidden from view, clicks, and screen readers */
+    visibility: hidden;
+  }
+  textarea {
+    overflow: hidden;
+    resize: none;
+    line-height: 1.4;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: sans-serif;
+    background-color: transparent;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid black;
+  }
+  textarea,
+  &:after {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  textarea:focus {
+    border: 0.5px solid blue;
+  }
 `;
