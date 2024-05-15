@@ -4,6 +4,104 @@ import { TfiDownload } from "react-icons/tfi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
+const StyledNavbar = styled.nav`
+  margin: 2% 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 0.95rem;
+  position: relative;
+  li {
+    list-style: none;
+  }
+  @media (min-width: 1440px) {
+    font-size: clamp(1.1rem, 1.05vw, 1.875rem);
+  }
+`;
+const Navmain = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.4em;
+`;
+const Navleft = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+`;
+const Navright = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
+`;
+const Navmenu = styled.ul`
+  display: none;
+  @media (min-width: 1025px) {
+    display: flex;
+    gap: 2.5em;
+  }
+`;
+const Navdownload = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  transform: translate(-50%, -50%);
+  &:hover {
+    color: blue;
+  }
+`;
+
+const Navmenuextended = styled.ul`
+  background-color: #000000e7;
+  height: 100%;
+  font-size: 0.9rem;
+  position: fixed;
+  color: gray;
+  top: 0;
+  right: -5.58%;
+  left: 0;
+  z-index: 1;
+  transition: 1s ease;
+  font-size: 2.5rem;
+  div:nth-child(1) {
+    position: absolute;
+    top: 3%;
+    right: 10%;
+  }
+  div:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media (min-width: 1025px) {
+    display: none;
+  }
+`;
+const Navlink = styled(Link)`
+  display: flex;
+  align-items: center;
+  color: gray;
+  text-decoration: none;
+  &:hover {
+    color: white;
+  }
+  svg {
+    height: 40px;
+  }
+  @media (min-width: 1500px) {
+    svg {
+      height: 60px;
+    }
+  }
+`;
+const Hambuger = styled(GiHamburgerMenu)`
+  @media (min-width: 1025px) {
+    display: none;
+  }
+`;
 export default function Navbar() {
   const [extendedNav, setExtendedNav] = useState(false);
   return (
@@ -76,107 +174,29 @@ export default function Navbar() {
       </Navmain>
       {extendedNav && (
         <Navmenuextended>
-          <li>
-            <Navlink to="/work">Work</Navlink>
-          </li>
-          <li>
-            <Navlink to="/about">About</Navlink>
-          </li>
-          <li>
-            <Navlink to="/contact">Contact</Navlink>
-          </li>
+          <div onClick={() => setExtendedNav((current) => !current)}>X</div>
+          <div>
+            <Navlink
+              to="/work"
+              onClick={() => setExtendedNav((current) => !current)}
+            >
+              Work
+            </Navlink>
+            <Navlink
+              to="/about"
+              onClick={() => setExtendedNav((current) => !current)}
+            >
+              About
+            </Navlink>
+            <Navlink
+              to="/contact"
+              onClick={() => setExtendedNav((current) => !current)}
+            >
+              Contact
+            </Navlink>
+          </div>
         </Navmenuextended>
       )}
     </StyledNavbar>
   );
 }
-const StyledNavbar = styled.nav`
-  margin: 2% 5% 0 5%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: 0.95rem;
-  position: relative;
-  li {
-    list-style: none;
-  }
-  @media (min-width: 1440px) {
-    font-size: clamp(1.1rem, 1.05vw, 1.875rem);
-  }
-`;
-const Navmain = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding-bottom: 0.5em;
-  margin-bottom: 0.4em;
-`;
-const Navleft = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-`;
-const Navright = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 40%;
-`;
-const Navmenu = styled.ul`
-  display: none;
-  @media (min-width: 1025px) {
-    display: flex;
-    gap: 2.5em;
-  }
-`;
-const Navdownload = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 12px;
-  transform: translate(-50%, -50%);
-  &:hover {
-    color: blue;
-  }
-`;
-
-const Navmenuextended = styled.ul`
-  background-color: #000000a6;
-  width: 25%;
-  height: 100vh;
-  font-size: 0.9rem;
-  a {
-    color: #aeaeae;
-  }
-  a:hover {
-    color: white;
-  }
-  position: absolute;
-  top: 0;
-  right: -5.58%;
-  bottom: 0;
-  @media (min-width: 1025px) {
-    display: none;
-  }
-`;
-const Navlink = styled(Link)`
-  display: flex;
-  align-items: center;
-  color: black;
-  text-decoration: none;
-  &:hover {
-    color: blue;
-  }
-  svg {
-    height: 40px;
-  }
-  @media (min-width: 1500px) {
-    svg {
-      height: 60px;
-    }
-  }
-`;
-const Hambuger = styled(GiHamburgerMenu)`
-  @media (min-width: 1025px) {
-    display: none;
-  }
-`;
