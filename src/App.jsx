@@ -9,6 +9,7 @@ import Workpage from "./pages/Workpage";
 import Aboutpage from "./pages/Aboutpage";
 import Contactpage from "./pages/Contactpage";
 import Footer from "./components/Footer";
+import Blogpage from "./pages/Blogpage";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/Work" element={<Workpage />} />
+          <Route path="/Work/:postid" element={<Blogpage />} />
+
           <Route path="/about" element={<Aboutpage />} />
           <Route path="/contact" element={<Contactpage />} />
         </Routes>

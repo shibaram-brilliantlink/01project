@@ -22,6 +22,7 @@ function Workpage() {
         {posts.length > 0 &&
           posts.map((post) => (
             <Post
+              key={post.id}
               img={post.imgurl}
               date={post.date}
               minread={post.minread}

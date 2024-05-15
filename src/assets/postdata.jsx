@@ -17,8 +17,7 @@ const posts = [
   {
     id: 2,
     title: "CSS overview",
-    imgurl:
-      "https://media.licdn.com/dms/image/D4D12AQH7fCkutuc1nQ/article-cover_image-shrink_600_2000/0/1695225634162?e=2147483647&v=beta&t=zY2WfUMsUB6bbOxw4fanNdhH3nV9zTZ6ze-IRjtZ63k",
+    imgurl: `https://img.freepik.com/premium-vector/css-logo-design_731343-114.jpg`,
     date: "May 2, 2024",
     minread: 4,
     description: `Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
@@ -67,7 +66,7 @@ const posts = [
     id: 5,
     title: "CSS overview",
     imgurl:
-      "https://media.licdn.com/dms/image/D4D12AQH7fCkutuc1nQ/article-cover_image-shrink_600_2000/0/1695225634162?e=2147483647&v=beta&t=zY2WfUMsUB6bbOxw4fanNdhH3nV9zTZ6ze-IRjtZ63k",
+      "https://img.freepik.com/premium-vector/css-logo-design_731343-114.jpg",
     date: "May 2, 2024",
     minread: 4,
     description: `Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
@@ -116,7 +115,7 @@ const posts = [
     id: 8,
     title: "CSS overview",
     imgurl:
-      "https://media.licdn.com/dms/image/D4D12AQH7fCkutuc1nQ/article-cover_image-shrink_600_2000/0/1695225634162?e=2147483647&v=beta&t=zY2WfUMsUB6bbOxw4fanNdhH3nV9zTZ6ze-IRjtZ63k",
+      "https://img.freepik.com/premium-vector/css-logo-design_731343-114.jpg",
     date: "May 2, 2024",
     minread: 4,
     description: `Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
@@ -165,7 +164,7 @@ const posts = [
     id: 11,
     title: "CSS overview",
     imgurl:
-      "https://media.licdn.com/dms/image/D4D12AQH7fCkutuc1nQ/article-cover_image-shrink_600_2000/0/1695225634162?e=2147483647&v=beta&t=zY2WfUMsUB6bbOxw4fanNdhH3nV9zTZ6ze-IRjtZ63k",
+      "https://img.freepik.com/premium-vector/css-logo-design_731343-114.jpg",
     date: "May 2, 2024",
     minread: 4,
     description: `Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
@@ -214,8 +213,7 @@ const posts = [
     id: 14,
     title: "CSS overview",
     imgurl:
-      "https://media.licdn.com/dms/image/D4D12AQH7fCkutuc1nQ/article-cover_image-shrink_600_2000/0/1695225634162?e=2147483647&v=beta&t=zY2WfUMsUB6bbOxw4fanNdhH3nV9zTZ6ze-IRjtZ63k",
-    date: "May 2, 2024",
+      "https://img.freepik.com/premium-vector/css-logo-design_731343-114.jpg",
     date: "May 2, 2024",
     minread: 4,
     description: `Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]

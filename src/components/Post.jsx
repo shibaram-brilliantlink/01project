@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function Post(props) {
   return (
-    <Wrapper key={props.id}>
+    <Wrapper>
       <div>
         <Styledimg to={`/work/${props.id}`}>
           <figure>
