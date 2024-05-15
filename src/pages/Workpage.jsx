@@ -27,6 +27,7 @@ function Workpage() {
               minread={post.minread}
               title={post.title}
               id={post.id}
+              description={post.description}
             />
           ))}
       </Blog>
@@ -56,7 +57,7 @@ const StyledWorkpage = styled.div`
   padding: 0 5%;
   display: flex;
   justify-content: space-between;
-  gap: 1em;
+  gap: 1.5em;
 `;
 const Leftbar = styled.aside`
   width: 25%;
@@ -106,4 +107,5 @@ const Blog = styled.main`
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2em;
+  width: 70%;
 `;
