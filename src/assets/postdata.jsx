@@ -2,7 +2,8 @@ const posts = [
   {
     id: 1,
     title: "HTML - overview",
-    imgurl: "https://www.w3.org/html/logo/downloads/HTML5_sticker.png",
+    imgurl:
+      "https://miro.medium.com/v2/resize:fit:1000/1*1u2p917cvlyP6SuHcq3t0Q.jpeg",
     date: "May 1, 2024",
     minread: 5,
     description: `HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
@@ -50,7 +51,8 @@ const posts = [
   {
     id: 4,
     title: "HTML - overview",
-    imgurl: "https://www.w3.org/html/logo/downloads/HTML5_sticker.png",
+    imgurl:
+      "https://miro.medium.com/v2/resize:fit:1000/1*1u2p917cvlyP6SuHcq3t0Q.jpeg",
     date: "May 1, 2024",
     minread: 5,
     description: `HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
@@ -98,7 +100,8 @@ const posts = [
   {
     id: 7,
     title: "HTML - overview",
-    imgurl: "https://www.w3.org/html/logo/downloads/HTML5_sticker.png",
+    imgurl:
+      "https://miro.medium.com/v2/resize:fit:1000/1*1u2p917cvlyP6SuHcq3t0Q.jpeg",
     date: "May 1, 2024",
     minread: 5,
     description: `HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
@@ -146,7 +149,8 @@ const posts = [
   {
     id: 10,
     title: "HTML - overview",
-    imgurl: "https://www.w3.org/html/logo/downloads/HTML5_sticker.png",
+    imgurl:
+      "https://miro.medium.com/v2/resize:fit:1000/1*1u2p917cvlyP6SuHcq3t0Q.jpeg",
     date: "May 1, 2024",
     minread: 5,
     description: `HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
@@ -194,7 +198,8 @@ const posts = [
   {
     id: 13,
     title: "HTML - overview",
-    imgurl: "https://www.w3.org/html/logo/downloads/HTML5_sticker.png",
+    imgurl:
+      "https://miro.medium.com/v2/resize:fit:1000/1*1u2p917cvlyP6SuHcq3t0Q.jpeg",
     date: "May 1, 2024",
     minread: 5,
     description: `HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
@@ -243,7 +248,8 @@ const posts = [
   {
     id: 16,
     title: "HTML - overview",
-    imgurl: "https://www.w3.org/html/logo/downloads/HTML5_sticker.png",
+    imgurl:
+      "https://miro.medium.com/v2/resize:fit:1000/1*1u2p917cvlyP6SuHcq3t0Q.jpeg",
     date: "May 1, 2024",
     minread: 5,
     description: `HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.

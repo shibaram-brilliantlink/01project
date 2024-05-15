@@ -7,13 +7,14 @@ import { Link } from "react-router-dom";
 function Post(props) {
   return (
     <Wrapper key={props.id}>
-      <Styledimg to={`/work/${props.id}`}>
-        <div>
+      <div>
+        <Styledimg to={`/work/${props.id}`}>
           <figure>
             <img src={props.img} alt="Post picture" />
           </figure>
-        </div>
-      </Styledimg>
+        </Styledimg>
+      </div>
+
       <h3>{props.title}</h3>
       <div>
         <span>{props.date}</span>
@@ -35,22 +36,21 @@ function Post(props) {
 
 export default Post;
 const Wrapper = styled.div`
-  width: 48%;
+  width: 45%;
   padding: 2%;
   border: 0.5px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   letter-spacing: 0.2px;
-  font-size: 20px;
+  font-size: clamp(1rem, 0.9382rem + 0.3294vw, 1.35rem);
   font-weight: 340;
   h3 {
-    font-size: 2rem;
+    font-size: clamp(1.25rem, 1.1176rem + 0.7059vw, 2rem);
     font-weight: 350;
   }
   div {
     display: flex;
     justify-content: space-between;
-    padding: 0.2em;
   }
   span:nth-child(2) {
     display: flex;
@@ -64,6 +64,14 @@ const Wrapper = styled.div`
     overflow: hidden;
     text-align: justify;
     font-weight: 300;
+  }
+  div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 5%;
   }
 `;
 const Styledlink = styled(Link)`
@@ -88,17 +96,38 @@ const Styledlink = styled(Link)`
 `;
 const Styledimg = styled(Link)`
   img {
-    height: 250px;
     width: 100%;
     object-fit: cover;
-
+    height: 16vw;
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
+  @media (max-width: 1400px) {
+    img {
+      height: 17vw;
+    }
+  }
+  @media (max-width: 900px) {
+    img {
+      height: 24vw;
+    }
+  }
+  @media (max-width: 768px) {
+    img {
+      height: 44vw;
+    }
+  }
+  @media (max-width: 500px) {
+    img {
+      height: 50vw;
+    }
   }
   /* Animation effect on hover */
   figure {
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
   }
   figure::before {
     position: absolute;

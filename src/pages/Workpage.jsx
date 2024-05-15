@@ -58,6 +58,7 @@ const StyledWorkpage = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 1.5em;
+  margin: 2em 0;
 `;
 const Leftbar = styled.aside`
   width: 25%;
@@ -105,7 +106,7 @@ const Rightbar = styled(Leftbar)`
 const Blog = styled.main`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2em;
-  width: 70%;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  width: 100%;
 `;
