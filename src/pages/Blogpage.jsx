@@ -41,12 +41,14 @@ const Wrapper = styled.div`
   padding: 0 5%;
   margin: 2em 0 3em 0;
   font-size: clamp(1rem, calc(1rem + ((1vw - 0.203125rem) * 0.4514)), 1.45rem);
+  font-weight: 250;
   h2 {
-    font-size: 2em;
+    font-size: 2.8em;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+    font-weight: 450;
   }
   h3 {
     font-size: 1.25em;
@@ -66,7 +68,6 @@ const Wrapper = styled.div`
   }
   section {
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: space-between;
     align-items: flex-start;
   }

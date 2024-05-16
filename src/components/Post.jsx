@@ -63,7 +63,7 @@ const Wrapper = styled.div`
     height: 100px;
     overflow: hidden;
     text-align: justify;
-    font-weight: 300;
+    font-weight: 240;
   }
   div:nth-child(1) {
     display: flex;

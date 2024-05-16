@@ -83,13 +83,14 @@ const Navmenuextended = styled.ul`
 const Navlink = styled(Link)`
   display: flex;
   align-items: center;
-  color: gray;
+  color: black;
   text-decoration: none;
   &:hover {
-    color: white;
+    color: blue;
   }
   svg {
     height: 40px;
+    width: 100%;
   }
   @media (min-width: 1500px) {
     svg {
