@@ -112,7 +112,7 @@ Error generating stack: `+o.message+`
   height: 100%;
   font-size: 0.9rem;
   position: fixed;
-  color: gray;
+  color: rgba(255, 255, 255, 0.7);
   top: 0;
   right: -5.58%;
   left: 0;
@@ -129,6 +129,9 @@ Error generating stack: `+o.message+`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+  a {
+    color: rgba(255, 255, 255, 0.8);
   }
   @media (min-width: 1025px) {
     display: none;
